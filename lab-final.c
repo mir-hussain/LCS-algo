@@ -7,13 +7,18 @@ void restore_communication(char signals[][100], int city_count);
 
 int main()
 {
-    char signals[][100] = {
-        "ABCDGH", // City 1
-        "AEDFHR", // City 2
-        "ABCGHR", // City 3
-    };
+    int city_count;
+    printf("Enter the number of cities: ");
+    scanf("%d", &city_count);
 
-    int city_count = sizeof(signals) / sizeof(signals[0]);
+    char signals[city_count][100];
+
+    printf("Enter the signals for each city:\n");
+    for (int i = 0; i < city_count; i++)
+    {
+        printf("City %d: ", i + 1);
+        scanf("%s", signals[i]);
+    }
 
     restore_communication(signals, city_count);
 
